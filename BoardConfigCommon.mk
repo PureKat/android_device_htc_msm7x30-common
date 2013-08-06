@@ -28,6 +28,7 @@ ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
 USE_MALLOC_ALIGNMENT := 16
 TARGET_HAVE_TSLIB := false
+TARGET_CPU_VARIANT := cortex-a9
 
 TARGET_EXTRA_CFLAGS += $(call cc-option,-march=armv7-a -mtune=cortex-a8)
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
