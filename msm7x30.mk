@@ -30,7 +30,8 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc
+    device/htc/msm7x30-common/rootdir/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc \
+    device/htc/msm7x30-common/rootdir/fstab.msm7x30:root/fstab.msm7x30
 
 # Common 7x30 firmware
 PRODUCT_COPY_FILES += \
@@ -40,13 +41,13 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
-    device/htc/msm7x30-common/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw 
+    device/htc/msm7x30-common/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw
 
 # media configs
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml \
-    device/htc/msm7x30-common/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/msm7x30-common/audio_policy.conf:system/etc/audio_policy.conf
+    device/htc/msm7x30-common/rootdir/media_profiles.xml:system/etc/media_profiles.xml \
+    device/htc/msm7x30-common/rootdir/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/msm7x30-common/rootdir/audio_policy.conf:system/etc/audio_policy.conf
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -118,6 +119,9 @@ PRODUCT_PACKAGES += \
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+# lower the increment
+ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.heapgrowthlimit=36m
 
 # use high-density artwork where available
 PRODUCT_LOCALES += hdpi
