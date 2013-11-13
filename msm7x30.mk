@@ -31,7 +31,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/rootdir/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc \
-    device/htc/msm7x30-common/rootdir/fstab.msm7x30:root/fstab.msm7x30
+    device/htc/msm7x30-common/rootdir/fstab.msm7x30:root/fstab.msm7x30 \
+    device/htc/msm7x30-common/rootdir/fstab.msm7x30:recovery/root/fstab.msm7x30
 
 # Common 7x30 firmware
 PRODUCT_COPY_FILES += \
