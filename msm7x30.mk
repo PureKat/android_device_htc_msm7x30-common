@@ -137,4 +137,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1
 
-$(call inherit-product-if-exists, vendor/htc/msm7x30-common/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/msm7x30-common/msm7x30-common-vendor.mk)
