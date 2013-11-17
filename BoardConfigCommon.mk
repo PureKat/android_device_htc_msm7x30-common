@@ -65,8 +65,8 @@ TARGET_USES_C2D_COMPOSITION := true
 # TARGET_NO_HW_VSYNC := true
 BOARD_EGL_CFG := device/htc/msm7x30-common/rootdir/egl.cfg
 TARGET_NO_INITLOGO := true
-
 # TARGET_GRALLOC_USES_ASHMEM := true # from qsd8k
+COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
 
 # QCOM enhanced A/V
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
@@ -80,7 +80,7 @@ BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 
 # GPS
 BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
+# BOARD_VENDOR_QCOM_AMSS_VERSION := 1200 # unused
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm7x30
 
 # Bluetooth
@@ -94,6 +94,7 @@ ENABLE_WEBGL := true
 # Camera
 TARGET_DISABLE_ARM_PIE := true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
+# BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true # unused
 COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNO_UPDATE_PREVIEW
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
@@ -110,15 +111,13 @@ BOARD_WLAN_DEVICE := bcmdhd
 WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_MODULE_NAME := bcmdhd
+WIFI_DRIVER_MODULE_NAME := "bcmdhd"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcmdhd.ko"
 BOARD_LEGACY_NL80211_STA_EVENTS := true
 
-# Legacy
-COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
+# RIL
 BOARD_USE_NEW_LIBRIL_HTC := true
 BOARD_USES_LEGACY_RIL := true
-BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
 
 # Screen
 TARGET_SCREEN_HEIGHT := 800

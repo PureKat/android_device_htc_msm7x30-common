@@ -110,7 +110,6 @@ PRODUCT_PACKAGES += \
 
 # Misc Packages
 PRODUCT_PACKAGES += \
-    DeviceSettings \
     Torch
 
 # Filesystem management tools
