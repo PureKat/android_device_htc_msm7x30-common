@@ -86,7 +86,7 @@ PRODUCT_PACKAGES += \
 
 # Power HAL & GPS
 PRODUCT_PACKAGES += \
-    gps.msm7x30
+    gps.msm7x30 \
     power.msm7x30
 
 # Media
