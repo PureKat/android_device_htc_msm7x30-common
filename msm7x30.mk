@@ -84,8 +84,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnetcmdiface
 
-# Power HAL
+# Power HAL & GPS
 PRODUCT_PACKAGES += \
+    gps.msm7x30
     power.msm7x30
 
 # Media
