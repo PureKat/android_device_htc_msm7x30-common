@@ -18,5 +18,5 @@
 for different hardware and product builds. -->
 <resources>
     <!-- HTC Camcorder Mode -->
-    <bool name="needsHTCCamMode">true</bool>
+    <bool name="needsHTCCamMode">false</bool>
 </resources>
