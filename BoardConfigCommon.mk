@@ -20,7 +20,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := scorpion
+TARGET_CPU_VARIANT := cortex-a8
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
@@ -37,6 +37,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := device/htc/msm7x30-common/rootdir/fstab.msm7x30
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
+USE_SET_METADATA := false
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-3.0
@@ -55,6 +56,7 @@ TARGET_QCOM_DISPLAY_VARIANT := legacy
 # TARGET_QCOM_MEDIA_VARIANT := legacy # causes build failures with our qcom_display
 BOARD_EGL_NEEDS_LEGACY_FB := true
 USE_OPENGL_RENDERER := true
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 TARGET_USES_ION := false
 TARGET_USES_C2D_COMPOSITION := true
 BOARD_EGL_CFG := device/htc/msm7x30-common/rootdir/egl.cfg
@@ -88,7 +90,7 @@ ENABLE_WEBGL := true
 TARGET_DISABLE_ARM_PIE := true
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
-COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNO_UPDATE_PREVIEW
+COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNO_UPDATE_PREVIEW -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
