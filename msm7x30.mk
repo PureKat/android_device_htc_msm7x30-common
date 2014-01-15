@@ -57,6 +57,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
+PRODUCT_PACKAGES += \
+    camera.msm7x30
+
+
+# Overlays
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 # Audio
