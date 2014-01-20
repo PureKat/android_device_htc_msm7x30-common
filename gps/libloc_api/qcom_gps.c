@@ -929,9 +929,7 @@ void server_send_thread(void *arg)
 	while (1) {
 		int updated_flags;
 		int engine_off;
-#if AMSS_VERSION==1240
 		int moving_to_nav = 0;
-#endif
 
 		while (!gps_client.updated_flags)
 			pthread_cond_wait(&gps_client.updated_cond, &gps_client.lock);
@@ -952,10 +950,8 @@ void server_send_thread(void *arg)
 
 		SERVER_LOCK();
 		engine_off = (gps_server.status.status == GPS_STATUS_ENGINE_OFF);
-#if AMSS_VERSION==1240
 		if (updated_flags & GPS_CLIENT_UPDATED_STATUS)
 			moving_to_nav = (gps_server.status.status != GPS_STATUS_SESSION_BEGIN && gps_client.status == GPS_STATUS_SESSION_BEGIN);
-#endif
 		SERVER_UNLOCK();
 
 		FUNC_ALOGV("client updated: 0x%08x\n", updated_flags);
@@ -972,10 +968,8 @@ void server_send_thread(void *arg)
 			requested_xtra = 0;
 		}
 
-#if AMSS_VERSION==1240
 		if (moving_to_nav)
 			updated_flags |= GPS_CLIENT_UPDATED_XTRA | GPS_CLIENT_UPDATED_AGPS_SUPL;
-#endif
 
 		SERVER_CHECK_SEND(RELOAD);
 		SERVER_CHECK_SEND(TIME);
