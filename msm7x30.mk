@@ -121,9 +121,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 # lower the increment
 ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.heapgrowthlimit=36m
 
-# use high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
