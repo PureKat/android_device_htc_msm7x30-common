@@ -123,6 +123,8 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.composition.type=gpu \
+	ro.config.low_ram=true
 
 $(call inherit-product-if-exists, vendor/htc/msm7x30-common/msm7x30-common-vendor.mk)
