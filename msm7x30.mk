@@ -121,10 +121,8 @@ ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.heapgrowthlimit=36m
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=gpu \
-	ro.config.low_ram=true
+    ro.config.low_ram=true
 
 $(call inherit-product-if-exists, vendor/htc/msm7x30-common/msm7x30-common-vendor.mk)
