@@ -42,7 +42,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-3.0
-BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88
 BOARD_KERNEL_PAGE_SIZE := 4096
 TARGET_NO_BOOTLOADER := true
