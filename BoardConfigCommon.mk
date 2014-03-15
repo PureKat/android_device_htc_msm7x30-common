@@ -18,10 +18,11 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 # Architecture
 TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a8
-TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := scorpion
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
 

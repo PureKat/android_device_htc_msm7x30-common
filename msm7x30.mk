@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
+COMMON_PATH := device/htc/msm7x30-common
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -29,36 +32,32 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/rootdir/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc \
-    device/htc/msm7x30-common/rootdir/fstab.msm7x30:root/fstab.msm7x30 \
-    device/htc/msm7x30-common/rootdir/fstab.msm7x30:recovery/root/fstab.msm7x30
+    $(COMMON_PATH)/ramdisk/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc \
+    $(COMMON_PATH)/rootdir/fstab.msm7x30:root/fstab.msm7x30 \
+    $(COMMON_PATH)/rootdir/fstab.msm7x30:recovery/root/fstab.msm7x30
 
 # Common 7x30 firmware
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
-    device/htc/msm7x30-common/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
-    device/htc/msm7x30-common/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
-    device/htc/msm7x30-common/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
-    device/htc/msm7x30-common/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
-    device/htc/msm7x30-common/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
-    device/htc/msm7x30-common/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw
+    $(COMMON_PATH)/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
+    $(COMMON_PATH)/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
+    $(COMMON_PATH)/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
+    $(COMMON_PATH)/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
+    $(COMMON_PATH)/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
+    $(COMMON_PATH)/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
+    $(COMMON_PATH)/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw
 
 # media configs
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/rootdir/media_profiles.xml:system/etc/media_profiles.xml \
-    device/htc/msm7x30-common/rootdir/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/msm7x30-common/rootdir/audio_policy.conf:system/etc/audio_policy.conf
+    $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    $(COMMON_PATH)/rootdir/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 # Camera
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
+    $(COMMON_PATH)/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
 PRODUCT_PACKAGES += \
     camera.msm7x30
-
-
-# Overlays
-PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
