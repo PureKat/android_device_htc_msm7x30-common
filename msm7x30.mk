@@ -123,6 +123,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=gpu \
-    ro.config.low_ram=true
+    ro.config.low_ram=true \
+    debug.egl.recordable.rgba8888=1
 
 $(call inherit-product-if-exists, vendor/htc/msm7x30-common/msm7x30-common-vendor.mk)
