@@ -100,8 +100,7 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory \
-    DeviceSettings
+    com.android.future.usb.accessory
 
 # Misc Packages
 PRODUCT_PACKAGES += \
